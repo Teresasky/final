@@ -1,20 +1,91 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="description" content="Awesome works by Teresa Cao"><!-- good -->
         <title>Teresa Cao</title><!-- good -->
-        <meta name="description" content="Project 1">
-        <meta name="key words" content="web design blog, web dev blog, teresacao">
-        <link rel="icon" type="image/png" href="images/favicon.png"/><!-- favicon -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="short cut icon" type="image/png" href="images/favicon.png"/><!-- favicon -->
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-     
+        <meta name="viewport" content="device-width">
         <link rel="stylesheet" href="./css/html5reset.css">
-        <meta name="viewport" content="device-width" initial-scale=1>
-        <link rel="stylesheet" href="./css/style.css"> 
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- /* QR code */ -->
+        <style media="screen">
+          #qrcode { display: none; }
+        </style>
+
+        <style media="print">
+          #qrcode { display: block; }
+        </style>
+        <script>
+        var TxtType = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            var that = this;
+            var delta = 200 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+            }
+
+            setTimeout(function() {
+            that.tick();
+            }, delta);
+        };
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i=0; i<elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+        document
+        .querySelectorAll('body')[0]
+        .style
+        .backgroundColor = 'whiteSmoke';
+        </script>
     </head>
-    <body     background ="images/black-concrete-background-3.png">
+
+
+    
+    <body>
         <a class="skip-main" href="#main">Skip to main content</a>
 
+        </ul>
         <header>
             <div class="container">
                 <div id="branding">
@@ -22,54 +93,115 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html ">Home </a></li>
-                        <li><a class="current-page" href="project1.html ">Selected</a></li>
+                        <li><a class="current-page" href="index.html ">Home </a></li>
+                        <li><a href="project1.html ">Selected</a></li>
                         <li><a href="about.html ">About </a></li>
                         <li><a href="resume.html ">Resume</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
+
         <section>
-                <div class="parallax"></div>
 
+            <div class="typewriteBox">
+                        <p id="main" class="typewrite" data-period="2000" data-type='[ "Hi, I am Teresa", "I do user-centered design with empathy."]'>
+                          <span class="wrap"></span>
+                        </p>
+                    </div>
             <div class="container">
-                <article>
-                    <h1 id="main">Kwai Group Chat</h1>
-                    <p>I worked as the UX Design Intern at Kwai in 2018, focusing on the core App, Kwai, a short video social networking app with a billion users and 160 million DAU (Daily Active Users).  I went through the whole product process from the discussion of initial ideas with the product manager to the final shipment of the group chat feature and a series of features related.</p>
-                    <br>
-                    <i class="far fa-thumbs-down"></i>
-                    <h2>Background</h2>
-                    <br>
-                    <h3>What is Kwai?</h3>
-                    <p>Kwai provides everyone with the platform to record and share their lives.with over 700 million users worldwide, and millions of original videos published every day.
-
-                            Here, you can explore a real and interesting world.</p>
-                <br>
-                <br>
-                </article>
-
-                
-                <!-- corddion -->
-                        <div class="gallery-wrap">
-                          <div class="item item-1"></div>
-                          <div class="item item-2"></div>
-                          <div class="item item-3"></div>
-                          <div class="item item-4"></div>
-                          <div class="item item-5"></div>
+                <div class="box">
+                    <a href="project1.html">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img class="image" src="images/1.png" alt="Kwai">
+                                </div>
+                                <div class="flip-card-back">
+                                        <br>
+                                        <br>
+                                        <br>
+                                                <br>
+                                    <h1>Kwai</h1>  
+                                    <p>A short video app with 160 million DAU</p>
+                                </div>
+                            </div>
                         </div>
-                       </div>
-                      
+                    </a>
+                </div>
+
+                <div class="box"> 
+                 <a href="project1.html">
+                        <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img class="image" src="images/2.png" alt="NEatU">
+                                    </div>
+                                    <div class="flip-card-back">
+                                            <br>
+                                            <br>
+                                            <br>
+                                                <br>
+                                        <h1>NEatU</h1>  
+                                        <p>An app helping students with dining hall issues</p>
+                                    </div>
+                                </div>
+                            </div>    
+                        </a>
+                </div>
+                <div class="box"> 
+                        <a href="project1.html">
+                                <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <img class="image" src="images/4.png" alt="Commune">
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <h1>Commune</h1>  
+                                                <p>An app dealing with communication issues between partners</p>
+                                            </div>
+                                        </div>
+                                    </div>        
+                            </a>
+                </div>
+                <div class="box"> 
+                        <a href="project1.html">
+                                <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <img class="image" src="images/3.png" alt="Eldoor">
+                                            </div>
+                                            <div class="flip-card-back">
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                <br>
+                                                <h1>Eldoor</h1>  
+                                                <p>A TV program and an app that introduce elder people to modern city lives</p>
+                                            </div>
+                                        </div>
+                                    </div>  
+                            </a>
+                </div>
             </div>
 
         </section>
-        <br>
-        <br>
 
         <footer id="main-footer">
-                <div class="container">
-                    <p>Copyright &copy; 2017, my website</p>
-                </div>
+            <div class="container">
+                <p>Copyright &copy; 2017, my website</p>
+                <div id="qrcode">	
+                    <img src="http://chart.apis.google.com/chart?chs=150x150&cht=qr&chl=www.teresacao.com&choe=UTF-8" alt="qrcode
+                    ">
+                    <p>URL:###permalink###</p>
+                    <p>Scan the QR Code to load the page in your browser.</p>
+                    </div>
+            </div>
+            
         </footer>
     </body>
-</html>
+</html> 
