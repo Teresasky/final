@@ -79,7 +79,7 @@ a.skip-main:focus, a.skip-main:active {
     text-align: left;
     padding-top: 80px;
     padding-bottom: 30px;
-    padding-left: 10%;
+    padding-left: 6%;
 }
 
 .wrap {
@@ -125,13 +125,7 @@ div.callout {
 	border-top: 10px solid #444;
 }
 
-/* QR code */
-<style type="text/css" media="screen">
-.qrcode { display: none; }
-</style>
-<style type="text/css" media="print">
-.qrcode { display: block; }
-</style>
+
 
 
 /* accordion */
