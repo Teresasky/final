@@ -1,0 +1,369 @@
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size:15px;
+    line-height: 1.5;
+    font: 15px1.5 Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+/*Global*/
+
+.container{
+    width: 90%;
+    margin:auto;
+    overflow: hidden; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+section{
+    padding-top: 115px;
+}
+
+.picbox{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+.left{
+    align-self:flex-end;
+}
+.image{
+    overflow: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h1{
+    margin:auto;
+    overflow: hidden; 
+    align-self: center;
+    font: italic;
+    font-size: 30px;
+}
+
+ul{ 
+    margin: 10px;
+    padding: 0;
+}
+
+
+a.skip-main {
+    left:-999px;
+    position:absolute;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    z-index:-999;
+}
+a.skip-main:focus, a.skip-main:active {
+    color: #fff;
+    background-color:#000;
+    left: auto;
+    top: auto;
+    width: 30%;
+    height: auto;
+    overflow:auto;
+    margin: 10px 35%;
+    padding:5px;
+    border-radius: 15px;
+    border:4px solid yellow;
+    text-align:center;
+    font-size:1.2em;
+    z-index:999;
+}
+
+/* typewritter */
+.typewriteBox {
+    text-align: left;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    padding-left: 10%;
+}
+
+.wrap {
+    columns: #000000;; 
+    text-decoration: none;
+    font-size: 40px;
+}
+
+/* Callout */
+div.callout {
+	height: 60px;
+	width: 200px;
+	/* float: left; */
+}
+
+div.callout {
+	background-color: #444;
+	background-image: -moz-linear-gradient(top, #444, #444);
+	position: relative;
+	color: #ccc;
+	padding: 10px;
+	border-radius: 3px;
+	/* box-shadow: 0px 0px 20px #999; */
+	margin: 25px;
+	min-height: 50px;
+	border: 1px solid #333;
+	text-shadow: 0 0 1px #000;
+	
+	/*box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;*/
+}
+
+.callout::before {
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 0.8em solid transparent;
+	position: absolute;
+}
+
+.callout.top::before {
+	left: 45%;
+	bottom: -20px;
+	border-top: 10px solid #444;
+}
+
+/* QR code */
+<style type="text/css" media="screen">
+.qrcode { display: none; }
+</style>
+<style type="text/css" media="print">
+.qrcode { display: block; }
+</style>
+
+
+/* accordion */
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40vh;
+}
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+  
+
+}
+
+.item:hover{
+    flex: 7;
+  }
+
+.item-1 { 
+  background-image: url('../images/Kwai1.png');
+}
+
+.item-2 { 
+  background-image: url('../images/Kwai2.png');
+}
+
+.item-3 { 
+  background-image: url('../images/Kwai3.png');
+}
+
+.item-4 { 
+  background-image: url('../images/Kwai4.png');
+}
+
+.item-5 { 
+  background-image: url('../images/Kwai6.jpg');
+}
+
+/* parallex */
+.parallax {
+    /* The image used */
+    background-image: url('https://cdn.dribbble.com/users/226242/screenshots/5263982/zd_message_4x.jpg');
+
+    /* Full height */
+    height: 500px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+/* Code about flipcard */
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #dce0e6;
+    color: #555555;
+    transform: rotateY(180deg);
+    text-align: center;
+  }
+  /* Code about flipcard end*/
+
+
+/*Non Global*/
+header{
+    background: #efefef;
+    color:rgb(0, 0, 0);
+    min-height: 70p;
+    border-bottom:#e8491d;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 1;
+
+}
+
+header a{
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+header li{
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding{
+    float: left;
+}
+
+header nav ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    color: rgb(255, 180, 180)
+    text-transform: uppercase;
+    font: size 10px;
+    list-style: none;
+}
+
+header nav a{
+    font-size: 12px;
+    padding: 10px 18px;
+    text-decoration: none;
+}
+
+header nav a:active{
+    color: #000000;
+    font: size 14px;
+}
+
+header nav.current{
+    background: #000000
+    font-size:20px
+}
+
+footer{
+    background: #efefef;
+    color:rgb(0, 0, 0);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    min-height: 70p;
+    border-bottom:#e8491d;
+
+}
+
+.skip-links{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.skip-links a{
+    position: absolute;
+    top: -3em;  
+}
+
+.current-page {
+    color: orangered;
+    font-weight: bold;
+
+}
+.projectimage {
+    width: 90%
+}
+
+.box{
+    width: 90%;
+    padding: 20px;
+}
+
+
+  /* For tablets: */
+@media only screen and (min-width: 720px) {
+    .picbox {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    } 
+    .box{
+        width: 42%;
+        display: inline-block;
+        padding: 20px;
+    }
+    header nav ul{
+        display: flex;
+        flex-direction: row;
+}
+
+  /* For desktop: */
+@media only screen and (min-width: 1040px) {
+    .picbox {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    } 
+    .box{
+        width: 30%;
+        display: inline-block;
+        padding: 10px;
+    }
+    header nav ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+}
+
