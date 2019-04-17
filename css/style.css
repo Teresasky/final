@@ -220,13 +220,13 @@ div.callout {
   
   /* Style the front side (fallback if image is missing) */
   .flip-card-front {
-    background-color: #bbb;
+    background-color: #f7f7f7;
     color: black;
   }
   
   /* Style the back side */
   .flip-card-back {
-    background-color: #dce0e6;
+    background-color: #f7f7f7;
     color: #555555;
     transform: rotateY(180deg);
     text-align: center;
@@ -236,7 +236,7 @@ div.callout {
 
 /*Non Global*/
 header{
-    background: #efefef;
+    background: #f7f7f7;
     color:rgb(0, 0, 0);
     min-height: 70p;
     border-bottom:#e8491d;
@@ -277,6 +277,7 @@ header nav a{
     font-size: 12px;
     padding: 10px 18px;
     text-decoration: none;
+    color: #555555;
 }
 
 header nav a:active{
@@ -290,7 +291,7 @@ header nav.current{
 }
 
 footer{
-    background: #efefef;
+    background: #f7f7f7;
     color:rgb(0, 0, 0);
     padding-top: 30px;
     padding-bottom: 30px;
@@ -311,8 +312,9 @@ footer{
 }
 
 .current-page {
-    color: orangered;
+    color: #000000;
     font-weight: bold;
+    font-size: 18px;
 
 }
 .projectimage {
